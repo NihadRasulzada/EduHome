@@ -1,5 +1,6 @@
 ﻿using EduHome.DAL;
 using EduHome.Models;
+using EduHome.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -21,7 +22,11 @@ namespace EduHome.Controllers
         public IActionResult Index()
         {
             List<Slider> slider = _db.Sliders.ToList();
-            return View(slider);
+            List<Service> services = _db.Services.ToList();
+            HomeVM vm = new HomeVM();
+            vm.Sliders = slider;
+            vm.Services = services;
+            return View(vm);
         }
     }
 }
