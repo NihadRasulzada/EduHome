@@ -2,6 +2,7 @@
 using EduHome.Models;
 using EduHome.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -19,13 +20,12 @@ namespace EduHome.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            List<Slider> slider = _db.Sliders.ToList();
-            List<Service> services = _db.Services.ToList();
-            HomeVM vm = new HomeVM();
-            vm.Sliders = slider;
-            vm.Services = services;
+            HomeVM vm = new HomeVM
+            {
+                Services = await _db.Services.ToListAsync()
+            };
             return View(vm);
         }
     }
