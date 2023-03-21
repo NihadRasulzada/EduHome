@@ -1,0 +1,50 @@
+﻿@model List<Blog>
+@foreach (Blog item in Model)
+{
+    if (item != Model[Model.Count - 1])
+    {
+        <div class="col-md-4 @ViewBag.If col-xs-12">
+            <div class="single-blog">
+                <div class="blog-img">
+                    <a href="blog-details.html"><img src="../img/blog/@item.Img" alt="blog"></a>
+                    <div class="blog-hover">
+                        <a href="blog-details.html"><i class="fa fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-top">
+                        <p>By @item.By  /  @item.Date.ToString("MMMM dd,yyyy")  /  <i class="fa fa-comments-o"></i> @item.NotficationCount</p>
+                    </div>
+                    <div class="blog-bottom">
+                        <h2><a href="blog-details.html">@item.Name </a></h2>
+                        <a href="blog-details.html">read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+    else
+    {
+        <div class="col-md-4 @ViewBag.Else col-xs-12">
+            <div class="single-blog">
+                <div class="blog-img">
+                    <a href="blog-details.html"><img src="../img/blog/@item.Img" alt="blog"></a>
+                    <div class="blog-hover">
+                        <a href="blog-details.html"><i class="fa fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-top">
+                        <p>By @item.By  /  @item.Date.ToString("MMMM dd,yyyy")  /  <i class="fa fa-comments-o"></i> @item.NotficationCount</p>
+                    </div>
+                    <div class="blog-bottom">
+                        <h2><a href="blog-details.html">@item.Name </a></h2>
+                        <a href="blog-details.html">read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+}
