@@ -156,3 +156,6 @@ D:\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Register\Sign
 D:\Me\MyProjects\Back\EduHome\EduHome\bin\Debug\net5.0\appsettings.json
 D:\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\About\Default.cshtml.g.cs
 D:\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\Courses\Default.cshtml.g.cs
+D:\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\Teachers\Default.cshtml.g.cs
+D:\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\Testimonials\Default.cshtml.g.cs
+D:\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Shared\Components\Blogs\Default.cshtml.g.cs

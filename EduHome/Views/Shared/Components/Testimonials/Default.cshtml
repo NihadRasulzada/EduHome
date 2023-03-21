@@ -1,0 +1,18 @@
+﻿@model List<Testimonial>
+@foreach (Testimonial item in Model)
+{
+    <div class="col-md-8 col-md-offset-2 col-sm-12">
+        <div class="single-testimonial">
+            <div class="testimonial-info">
+                <div class="testimonial-img">
+                    <img src="../img/testimonial/@item.Img" alt="testimonial">
+                </div>
+                <div class="testimonial-content">
+                    <p>@item.Description</p>
+                    <h4>@item.Name</h4>
+                    <h5>@item.Duty</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -19,19 +19,7 @@
 <div class="about-area pt-145 pb-155">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <div class="about-content">
-                    <h2>WELCOME TO <span>EDUHOME</span></h2>
-                    <p>I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was born and I will give you a complete account of the system, and expound the actual teachings  the master-builder of humanit happiness</p>
-                    <p class="hidden-sm">I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was born and I will give you a complete account of the system</p>
-                    <a class="default-btn" href="#">view courses</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="about-img">
-                    <img src="../img/about/about.png" alt="about">
-                </div>
-            </div>
+            @await Component.InvokeAsync("About")
         </div>
     </div>
 </div>
@@ -48,74 +36,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 col-sm-4 col-xs-12">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="../img/teacher/teacher1.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">STUART KELVIN</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-12">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="../img/teacher/teacher2.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">eamily cristian</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-12">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="../img/teacher/teacher3.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">kevin williams</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 hidden-sm col-xs-12">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="../img/teacher/teacher4.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">salina gomaze</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            @await Component.InvokeAsync("Teachers", new {take = 4})
         </div>
     </div>
 </div>
@@ -125,20 +46,7 @@
     <div class="container">
         <div class="row">
             <div class="testimonial-owl owl-theme owl-carousel">
-                <div class="col-md-8 col-md-offset-2 col-sm-12">
-                    <div class="single-testimonial">
-                        <div class="testimonial-info">
-                            <div class="testimonial-img">
-                                <img src="../img/testimonial/testimonial.jpg" alt="testimonial">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>I must explain to you how all this mistaken idea of denoung pleure and praising pain was born and I will give you a coete account of the system, and expound the actual</p>
-                                <h4>David Morgan</h4>
-                                <h5>Student, CSE</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @await Component.InvokeAsync("Testimonials")
             </div>
         </div>
     </div>
