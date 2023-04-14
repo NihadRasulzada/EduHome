@@ -1,7 +1,7 @@
 ﻿@model List<Blog>
 @foreach (Blog item in Model)
 {
-    if (item != Model[Model.Count - 1])
+    if (item.Id != Model[Model.Count - 1].Id)
     {
         <div class="col-md-4 @ViewBag.If col-xs-12">
             <div class="single-blog">

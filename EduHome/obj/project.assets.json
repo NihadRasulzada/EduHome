@@ -7464,11 +7464,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Me\\MyProjects\\Back\\EduHome\\EduHome\\EduHome.csproj",
+      "projectUniqueName": "C:\\Users\\nihad\\Documents\\Me\\MyProjects\\Back\\EduHome\\EduHome\\EduHome.csproj",
       "projectName": "EduHome",
-      "projectPath": "D:\\Me\\MyProjects\\Back\\EduHome\\EduHome\\EduHome.csproj",
+      "projectPath": "C:\\Users\\nihad\\Documents\\Me\\MyProjects\\Back\\EduHome\\EduHome\\EduHome.csproj",
       "packagesPath": "C:\\Users\\nihad\\.nuget\\packages\\",
-      "outputPath": "D:\\Me\\MyProjects\\Back\\EduHome\\EduHome\\obj\\",
+      "outputPath": "C:\\Users\\nihad\\Documents\\Me\\MyProjects\\Back\\EduHome\\EduHome\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nihad\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7535,7 +7535,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
