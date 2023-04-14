@@ -320,3 +320,11 @@ C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Edu
 C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\EduHome.csproj.CopyComplete
 C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\EduHome.genruntimeconfig.cache
 C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\ref\EduHome.dll
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\Error.cshtml.g.cs
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Services\Index.cshtml.g.cs
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Services\Create.cshtml.g.cs

@@ -1,0 +1,34 @@
+﻿@model List<Service>
+<div class="card">
+    <div class="card-header" style="display:flex;justify-content:space-between">
+        <div><h2>Services</h2></div>
+        <div>
+            <a asp-area="Admin" asp-controller="Services" asp-action="Create" class="btn rounded-pill btn-warning text-white" style="margin-right:10px">Create</a>
+        </div>
+    </div>
+    <div class="table-responsive text-nowrap">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @foreach (Service item in Model)
+                {
+                    <tr>
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@item.Name</strong></td>
+                        <td><span class="badge bg-label-primary me-1">Active</span></td>
+                        <td style="text-align:end; gap:normal">
+                            <a class="btn rounded-pill btn-warning">Detail</a>
+                            <a class="btn rounded-pill btn-primary">Update</a>
+                            <a class="btn rounded-pill btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
