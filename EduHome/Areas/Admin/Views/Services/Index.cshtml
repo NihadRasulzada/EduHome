@@ -22,9 +22,9 @@
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@item.Name</strong></td>
                         <td><span class="badge bg-label-primary me-1">Active</span></td>
                         <td style="text-align:end; gap:normal">
-                            <a class="btn rounded-pill btn-warning">Detail</a>
-                            <a class="btn rounded-pill btn-primary">Update</a>
-                            <a class="btn rounded-pill btn-danger">Delete</a>
+                            <a class="btn rounded-pill btn-warning text-white">Detail</a>
+                            <a asp-action="Update" asp-route-id="@item.Id" class="btn rounded-pill btn-primary text-white">Update</a>
+                            <a class="btn rounded-pill btn-danger text-white">Delete</a>
                         </td>
                     </tr>
                 }
