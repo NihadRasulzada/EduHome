@@ -70,5 +70,19 @@ namespace EduHome.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            Service _dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (id == null)
+            {
+                return NotFound();
+            }
+            if (_dbService == null)
+            {
+                return BadRequest();
+            }
+            return View(_dbService);
+        }
     }
 }
