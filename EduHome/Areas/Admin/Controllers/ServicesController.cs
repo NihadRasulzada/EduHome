@@ -3,6 +3,7 @@ using EduHome.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EduHome.Areas.Admin.Controllers
@@ -83,6 +84,30 @@ namespace EduHome.Areas.Admin.Controllers
                 return BadRequest();
             }
             return View(_dbService);
+        }
+
+        public async Task<IActionResult> Activity(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Service dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbService == null)
+            {
+                return BadRequest();
+            }
+
+            if (!dbService.isDeactive)
+            {
+                dbService.isDeactive = true;
+            }
+            else
+            {
+                dbService.isDeactive = false;
+            }
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
     }
 }
