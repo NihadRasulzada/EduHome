@@ -51,5 +51,28 @@ namespace EduHome.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        public async Task<IActionResult> Activity(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Slider dbslider = await _db.Sliders.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbslider == null)
+            {
+                return BadRequest();
+            }
+
+            if (!dbslider.isDeactive)
+            {
+                dbslider.isDeactive = true;
+            }
+            else
+            {
+                dbslider.isDeactive = false;
+            }
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
     }
 }
