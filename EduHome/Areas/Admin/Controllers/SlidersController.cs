@@ -26,6 +26,8 @@ namespace EduHome.Areas.Admin.Controllers
             List<Slider> slider = await _db.Sliders.ToListAsync();
             return View(slider);
         }
+
+        #region Create
         public IActionResult Create()
         {
             return View();
@@ -51,6 +53,9 @@ namespace EduHome.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        #endregion
+
+        #region Activity
         public async Task<IActionResult> Activity(int? id)
         {
             if (id == null)
@@ -71,6 +76,56 @@ namespace EduHome.Areas.Admin.Controllers
             {
                 dbslider.isDeactive = false;
             }
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+        #endregion
+
+        #region Detail
+        public async Task<IActionResult> Detail(int? id)
+        {
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+            Slider _dbslider = await _db.Sliders.FirstOrDefaultAsync(x => x.Id == id);
+            if (_dbslider == null)
+            {
+                return BadRequest();
+            }
+            return View(_dbslider);
+        }
+        #endregion
+
+        public async Task<IActionResult> Update(int? id)
+        {
+            Slider dbSlider = await _db.Sliders.FirstOrDefaultAsync(x => x.Id == id);
+            return View(dbSlider);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int? id, Slider slider)
+        {
+            Slider dbSlider = await _db.Sliders.FirstOrDefaultAsync(x => x.Id == id);
+            if (slider.Photo != null)
+            {
+                if (!slider.Photo.IsImage())
+                {
+                    ModelState.AddModelError("Photo", "Is not image");
+                    return View();
+                }
+                string folder = Path.Combine(_env.WebRootPath, "img", "slider");
+                slider.Img = await slider.Photo.SaveFileAsync(folder);
+                string path = Path.Combine(_env.WebRootPath, folder, dbSlider.Img);
+                if(System.IO.File.Exists(path))
+                {
+                    System.IO.File.Delete(path);
+                }
+                dbSlider.Img = slider.Img;
+            }
+            dbSlider.Name = slider.Name;
+            dbSlider.Description = slider.Description;
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

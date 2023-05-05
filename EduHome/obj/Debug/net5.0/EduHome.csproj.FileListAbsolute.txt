@@ -332,3 +332,5 @@ C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Raz
 C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Services\Details.cshtml.g.cs
 C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Sliders\Index.cshtml.g.cs
 C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Sliders\Create.cshtml.g.cs
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Sliders\Detail.cshtml.g.cs
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\Sliders\Update.cshtml.g.cs

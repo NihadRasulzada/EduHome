@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EduHome.Models
@@ -12,5 +13,10 @@ namespace EduHome.Models
         [NotMapped]
         public IFormFile Photo { get; set; }
         public bool isDeactive { get; set; }
+
+        public static implicit operator Slider(Service v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
