@@ -9,6 +9,7 @@ namespace EduHome.Controllers
 {
     public class AccountController : Controller
     {
+        #region Constructor
         private readonly UserManager<AppUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<AppUser> _signInManager;
@@ -20,7 +21,10 @@ namespace EduHome.Controllers
             _roleManager = roleManager;
             _signInManager = signInManager;
 
-        }
+        } 
+        #endregion
+
+        #region Login
         public IActionResult Login()
         {
             return View();
@@ -38,6 +42,7 @@ namespace EduHome.Controllers
             if (user.IsDeactive)
             {
                 ModelState.AddModelError("", "Your account is deactive");
+                return View();
             }
             Microsoft.AspNetCore.Identity.SignInResult signInResult = await _signInManager.PasswordSignInAsync(user, loginVM.Password, loginVM.IsRemember, true);
             if (signInResult.IsLockedOut)
@@ -51,7 +56,8 @@ namespace EduHome.Controllers
                 return View();
             }
             return RedirectToAction("Index", "Home");
-        }
+        } 
+        #endregion
 
         #region SignUp
         public IActionResult SignUp()
@@ -78,7 +84,7 @@ namespace EduHome.Controllers
                 }
                 return View();
             }
-            await _userManager.AddToRoleAsync(newUser, Roles.Admin.ToString());
+            await _userManager.AddToRoleAsync(newUser, Roles.Member.ToString());
             await _signInManager.SignInAsync(newUser, registerVM.IsRemember);
             return RedirectToAction("Index", "Home");
         }
@@ -105,5 +111,6 @@ namespace EduHome.Controllers
         //    }
         //} 
         //#endregion
+
     }
 }

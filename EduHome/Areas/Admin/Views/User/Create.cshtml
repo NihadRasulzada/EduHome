@@ -1,0 +1,51 @@
+﻿@model CreateVM
+<div class="col-8">
+    <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Create Services</h5>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <div style="margin-bottom:15px !important">
+                    <input asp-for="Name" placeholder="Name" style="margin-bottom:0px">
+                    <span asp-validation-for="Name" style="color:red; margin-left:10px"></span>
+                </div>
+                <div style="margin-bottom:15px !important">
+                    <input asp-for="Surname" placeholder="Surname" style="margin-bottom:0px">
+                    <span asp-validation-for="Surname" style="color:red; margin-left:10px"></span>
+                </div>
+                <div style="margin-bottom:15px !important">
+                    <input asp-for="Username" placeholder="Username" style="margin-bottom:0px">
+                    <span asp-validation-for="Username" style="color:red; margin-left:10px"></span>
+                </div>
+                <div style="margin-bottom:15px !important">
+                    <input asp-for="Email" placeholder="Email" style="margin-bottom:0px">
+                    <span asp-validation-for="Email" style="color:red; margin-left:10px"></span>
+                </div>
+                <div style="margin-bottom:15px !important">
+                    <input asp-for="Password" placeholder="Password" style="margin-bottom:0px">
+                    <span asp-validation-for="Password" style="color:red; margin-left:10px"></span>
+                </div>
+                <div style="margin-bottom:15px !important">
+                    <input asp-for="CheckPassword" placeholder="CheckPassword" style="margin-bottom:0px">
+                    <span asp-validation-for="CheckPassword" style="color:red; margin-left:10px"></span>
+                </div>
+                <div class="form-group">
+                    <label>Select Role</label>
+                    <select class="form-control" name="role">
+                        @foreach(string role in ViewBag.Roles)
+                        {
+                            <option value="@role">@role</option>
+                        }
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

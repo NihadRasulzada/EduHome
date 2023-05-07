@@ -24,8 +24,6 @@ namespace EduHome.ViewModel
         [DataType(DataType.Password)]
         [Compare("Password")]
         public string CheckPassword { get; set; }
-
-        [Required(ErrorMessage = "Bu xana bosh ola bilmez")]
         public bool IsRemember { get; set; }
     }
 }

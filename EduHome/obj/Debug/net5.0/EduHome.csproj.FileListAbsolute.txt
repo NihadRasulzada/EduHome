@@ -339,3 +339,6 @@ C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\bin\Debug\net5.0\Mic
 C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Views\Account\SignUp.cshtml.g.cs
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\Index.cshtml.g.cs
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\Create.cshtml.g.cs
+C:\Users\nihad\Documents\Me\MyProjects\Back\EduHome\EduHome\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\Update.cshtml.g.cs
