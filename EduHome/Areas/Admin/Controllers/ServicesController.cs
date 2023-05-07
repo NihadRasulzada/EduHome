@@ -22,6 +22,7 @@ namespace EduHome.Areas.Admin.Controllers
             return View(services);
         }
 
+        #region Create
         public IActionResult Create()
         {
             return View();
@@ -41,7 +42,9 @@ namespace EduHome.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        #endregion
 
+        #region Update
         public async Task<IActionResult> Update(int? id)
         {
             Service _dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
@@ -71,7 +74,9 @@ namespace EduHome.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        #endregion
 
+        #region Details
         public async Task<IActionResult> Details(int? id)
         {
             Service _dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
@@ -85,7 +90,9 @@ namespace EduHome.Areas.Admin.Controllers
             }
             return View(_dbService);
         }
+        #endregion
 
+        #region Activity
         public async Task<IActionResult> Activity(int? id)
         {
             if (id == null)
@@ -108,6 +115,7 @@ namespace EduHome.Areas.Admin.Controllers
             }
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
-        }
+        } 
+        #endregion
     }
 }

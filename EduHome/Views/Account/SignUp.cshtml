@@ -1,0 +1,75 @@
+﻿@model RegisterVM
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>Register</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Register start -->
+<div class="register-area pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <div class="login">
+                    <div class="login-form-container">
+                        <div class="login-text">
+                            <h2>Register</h2>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        </div>
+                        <div class="login-form">
+                            <form method="post">
+                                <div style="margin-bottom:15px !important">
+                                    <input asp-for="Name" placeholder="Name" style="margin-bottom:0px">
+                                    <span asp-validation-for="Name" style="color:red; margin-left:10px"></span>
+                                </div>
+                                <div style="margin-bottom:15px !important">
+                                    <input asp-for="Surname" placeholder="Surname" style="margin-bottom:0px">
+                                    <span asp-validation-for="Surname" style="color:red; margin-left:10px"></span>
+                                </div>
+                                <div style="margin-bottom:15px !important">
+                                    <input asp-for="Username" placeholder="Username" style="margin-bottom:0px">
+                                    <span asp-validation-for="Username" style="color:red; margin-left:10px"></span>
+                                </div>
+                                <div style="margin-bottom:15px !important">
+                                    <input asp-for="Email" placeholder="Email" style="margin-bottom:0px">
+                                    <span asp-validation-for="Email" style="color:red; margin-left:10px"></span>
+                                </div>
+                                <div style="margin-bottom:15px !important">
+                                    <input asp-for="Password" placeholder="Password" style="margin-bottom:0px">
+                                    <span asp-validation-for="Password" style="color:red; margin-left:10px"></span>
+                                </div>
+                                <div style="margin-bottom:15px !important">
+                                    <input asp-for="CheckPassword" placeholder="CheckPassword" style="margin-bottom:0px">
+                                    <span asp-validation-for="CheckPassword" style="color:red; margin-left:10px"></span>
+                                </div>
+                                <div class="button-box">
+                                    <div class="login-toggle-btn">
+                                        <input asp-for="IsRemember">
+                                        <label asp-for="IsRemember">Remember me</label>
+                                        <a href="#">Forgot Password?</a>
+                                    </div>
+                                    <button type="submit" class="default-btn">sign up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Register end -->
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -98,6 +98,7 @@ namespace EduHome.Areas.Admin.Controllers
         }
         #endregion
 
+        #region Update
         public async Task<IActionResult> Update(int? id)
         {
             Slider dbSlider = await _db.Sliders.FirstOrDefaultAsync(x => x.Id == id);
@@ -118,7 +119,7 @@ namespace EduHome.Areas.Admin.Controllers
                 string folder = Path.Combine(_env.WebRootPath, "img", "slider");
                 slider.Img = await slider.Photo.SaveFileAsync(folder);
                 string path = Path.Combine(_env.WebRootPath, folder, dbSlider.Img);
-                if(System.IO.File.Exists(path))
+                if (System.IO.File.Exists(path))
                 {
                     System.IO.File.Delete(path);
                 }
@@ -128,6 +129,8 @@ namespace EduHome.Areas.Admin.Controllers
             dbSlider.Description = slider.Description;
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
-        }
+        } 
+        #endregion
+
     }
 }

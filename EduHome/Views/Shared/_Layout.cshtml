@@ -42,8 +42,16 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="header-top-right text-right">
                             <ul>
-                                <li><a asp-controller="Register" asp-action="Login">login</a></li>
-                                <li><a asp-controller="Register" asp-action="SignUp">signup</a></li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li><a>@User.Identity.Name</a></li>
+                                    <li><a asp-controller="Account" asp-action="Logout">Logout</a></li>
+                                }
+                                else
+                                {
+                                    <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                                    <li><a asp-controller="Account" asp-action="SignUp">Signup</a></li>
+                                }
                             </ul>
                         </div>
                     </div>
@@ -324,6 +332,7 @@
         }
     </script>
     <script src="~/js/main.js"></script>
+    @RenderSection("Scripts",false)
 </body>
 
 <!-- Mirrored from demo.devitems.com/eduhome/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jun 2020 19:41:25 GMT -->
