@@ -7,12 +7,12 @@
         <div class="card-body">
             <form method="post">
                 <div class="mb-3 form-group">
-                    <label class="form-label">Services Name</label>
+                    <label asp-for="Name" class="form-label">Services Name</label>
                     <input asp-for="Name" class="form-control">
                     <span asp-validation-for="Name"></span>
                 </div>
                 <div class="mb-3 form-group">
-                    <label class="form-label">Description</label>
+                    <label asp-for="Description" class="form-label">Description</label>
                     <input asp-for="Description" class="form-control">
                     <span asp-validation-for="Description"></span>
                 </div>

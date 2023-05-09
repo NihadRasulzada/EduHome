@@ -1,0 +1,29 @@
+﻿@model About
+<div class="card">
+    <div class="card-header" style="display:flex;justify-content:space-between">
+        <div><h2>Sliders</h2></div>
+    </div>
+    <div class="table-responsive text-nowrap">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th style="text-align: right">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                <tr>
+                    <td>
+                        <img src="~/img/about/@Model.Img" style="width:200px ; object-fit:cover" />
+                    </td>
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@Model.Title</strong></td>
+                    <td style="text-align:end; gap:normal">
+                        <a asp-area="Admin" asp-controller="About" asp-action="Detail" class="btn rounded-pill btn-warning text-white">Detail</a>
+                        <a asp-area="Admin" asp-controller="About" asp-action="Update" class="btn rounded-pill btn-primary text-white">Update</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

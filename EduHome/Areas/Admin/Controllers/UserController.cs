@@ -118,6 +118,7 @@ namespace EduHome.Areas.Admin.Controllers
         }
         #endregion
 
+        #region Update
         public async Task<IActionResult> Update(string id)
         {
             #region Get
@@ -205,6 +206,54 @@ namespace EduHome.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
+        #endregion
 
+        #region ResetPassword
+        public async Task<IActionResult> ResetPassword(string id)
+        {
+            #region Get
+            if (id == null)
+            {
+                return NotFound();
+            }
+            AppUser dbUser = await _userManager.FindByIdAsync(id);
+            if (dbUser == null)
+            {
+                return BadRequest();
+            }
+            #endregion
+
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(string id, ResetPasswordVM resetPasswordVM)
+        {
+            #region Get
+            if (id == null)
+            {
+                return NotFound();
+            }
+            AppUser dbUser = await _userManager.FindByIdAsync(id);
+            if (dbUser == null)
+            {
+                return BadRequest();
+            }
+            #endregion
+
+            resetPasswordVM.Token = await _userManager.GeneratePasswordResetTokenAsync(dbUser);
+
+            IdentityResult identityResult = await _userManager.ResetPasswordAsync(dbUser, resetPasswordVM.Token, resetPasswordVM.Password);
+            if (!identityResult.Succeeded)
+            {
+                foreach (IdentityError error in identityResult.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                    return View();
+                }
+            }
+            return RedirectToAction("Index");
+        } 
+        #endregion
     }
 }

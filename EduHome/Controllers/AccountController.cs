@@ -55,6 +55,7 @@ namespace EduHome.Controllers
                 ModelState.AddModelError("", "Username or Password is blocked");
                 return View();
             }
+            await _signInManager.SignInAsync(user, loginVM.IsRemember);
             return RedirectToAction("Index", "Home");
         } 
         #endregion
@@ -94,6 +95,7 @@ namespace EduHome.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
+
             return RedirectToAction("Index", "Home");
         }
         #endregion

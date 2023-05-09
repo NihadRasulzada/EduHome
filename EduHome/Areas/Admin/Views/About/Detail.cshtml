@@ -1,0 +1,15 @@
+﻿@model About
+<style>
+    div.col-8 div.card span {
+        color: red;
+    }
+</style>
+<div class="col-8">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="~/img/about/@Model.Img" alt="Card image cap" style="object-fit:cover">
+        <div class="card-body">
+            <h5 class="card-title">@Html.Raw(Model.Title)</h5>
+            <p class="card-text">@Html.Raw(Model.Description)</p>
+        </div>
+    </div>
+</div>

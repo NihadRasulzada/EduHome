@@ -13,10 +13,5 @@ namespace EduHome.Models
         [NotMapped]
         public IFormFile Photo { get; set; }
         public bool isDeactive { get; set; }
-
-        public static implicit operator Slider(Service v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
