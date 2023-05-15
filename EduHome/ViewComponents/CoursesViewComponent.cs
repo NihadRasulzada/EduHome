@@ -20,10 +20,10 @@ namespace EduHome.ViewComponents
             List<Course> courses;
             if (take > 0)
             {
-                courses = await _db.Courses.Take(take).ToListAsync();
+                courses = await _db.Courses.Where(x => !x.IsDeactive).Take(take).ToListAsync();
                 return View(courses);
             }
-            courses = await _db.Courses.ToListAsync();
+            courses = await _db.Courses.Where(x => !x.IsDeactive).ToListAsync();
             return View(courses);
             
         }

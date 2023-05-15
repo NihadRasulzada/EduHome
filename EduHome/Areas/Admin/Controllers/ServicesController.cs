@@ -50,18 +50,26 @@ namespace EduHome.Areas.Admin.Controllers
         #region Update
         public async Task<IActionResult> Update(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
             Service _dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
+            if (_dbService == null)
+            {
+                return BadRequest();
+            }
             return View(_dbService);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int? id, Service service)
         {
-            Service _dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
             if (id == null)
             {
                 return NotFound();
             }
+            Service _dbService = await _db.Services.FirstOrDefaultAsync(x => x.Id == id);
             if (_dbService == null)
             {
                 return BadRequest();

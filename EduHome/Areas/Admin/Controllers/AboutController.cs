@@ -5,11 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace EduHome.Areas.Admin.Controllers
@@ -55,6 +51,11 @@ namespace EduHome.Areas.Admin.Controllers
                 if (!about.Photo.IsImage())
                 {
                     ModelState.AddModelError("Photo", "Is not image");
+                    return View();
+                }
+                if (!about.Photo.IsOlder1Mb())
+                {
+                    ModelState.AddModelError("Photo", "Is not Older 1Mb");
                     return View();
                 }
                 string folder = Path.Combine(_env.WebRootPath, "img", "about");

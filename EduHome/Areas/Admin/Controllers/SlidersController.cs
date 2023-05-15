@@ -3,11 +3,9 @@ using EduHome.Helper;
 using EduHome.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Data;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -47,6 +45,11 @@ namespace EduHome.Areas.Admin.Controllers
             if (!slider.Photo.IsImage())
             {
                 ModelState.AddModelError("Photo", "Is not image");
+                return View();
+            }
+            if (!slider.Photo.IsOlder1Mb())
+            {
+                ModelState.AddModelError("Photo", "Is not older 1Mb");
                 return View();
             }
             string folder = Path.Combine(_env.WebRootPath, "img", "slider");
@@ -104,19 +107,40 @@ namespace EduHome.Areas.Admin.Controllers
         #region Update
         public async Task<IActionResult> Update(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
             Slider dbSlider = await _db.Sliders.FirstOrDefaultAsync(x => x.Id == id);
+            if(dbSlider == null)
+            {
+                return BadRequest();
+            }
             return View(dbSlider);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int? id, Slider slider)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
             Slider dbSlider = await _db.Sliders.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbSlider == null)
+            {
+                return BadRequest();
+            }
             if (slider.Photo != null)
             {
                 if (!slider.Photo.IsImage())
                 {
                     ModelState.AddModelError("Photo", "Is not image");
+                    return View();
+                }
+                if (!slider.Photo.IsOlder1Mb())
+                {
+                    ModelState.AddModelError("Photo", "Is not older 1Mb");
                     return View();
                 }
                 string folder = Path.Combine(_env.WebRootPath, "img", "slider");

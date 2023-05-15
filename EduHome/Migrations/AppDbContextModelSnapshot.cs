@@ -35,9 +35,6 @@ namespace EduHome.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("isDeactive")
-                        .HasColumnType("bit");
-
                     b.HasKey("Id");
 
                     b.ToTable("About");
@@ -156,6 +153,9 @@ namespace EduHome.Migrations
 
                     b.Property<string>("Img")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeactive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
