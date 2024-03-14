@@ -1,0 +1,17 @@
+﻿@model List<Slider>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    @if (Model != null && Model.Count() > 0)
+    {
+        @foreach (Slider item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+            </tr>
+        }
+    }
+</table>
