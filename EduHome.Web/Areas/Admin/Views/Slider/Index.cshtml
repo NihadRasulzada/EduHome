@@ -1,17 +1,24 @@
 ﻿@model List<Slider>
 <table>
     <tr>
+        <th>Image</th>
         <th>Title</th>
         <th>Description</th>
+        <th>Action</th>
     </tr>
     @if (Model != null && Model.Count() > 0)
     {
         @foreach (Slider item in Model)
         {
             <tr>
+                <td><img style="width:150px;height:150px;" src="~/img/slider/@item.Image" /></td>
                 <td>@item.Title</td>
                 <td>@item.Description</td>
+                <td>
+                    <a asp-action="Update" asp-controller="Slider" asp-area="Admin" asp-route-id="@item.Id">Update</a>
+                </td>
             </tr>
         }
     }
 </table>
+<a asp-action="Create" asp-area="Admin" asp-controller="Slider">Create</a>

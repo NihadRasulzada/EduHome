@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduHome.Web.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240314172132_AddSlider")]
-    partial class AddSlider
+    [Migration("20240316090345_SliderUpdate")]
+    partial class SliderUpdate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

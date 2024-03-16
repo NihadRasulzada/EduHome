@@ -16,6 +16,7 @@ namespace EduHome.Web.DateAccessLayer
         {
             modelBuilder.Entity<Slider>().Ignore(x => x.Photo);
             modelBuilder.Entity<Slider>().Property(x => x.IsDeactive).HasDefaultValue(false);
+            modelBuilder.Entity<Slider>().Property(x => x.Title).IsRequired();
         }
     }
 }
